@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mark Pro", sans-serif;
+}
+
+header {
+  background-color: #fbd703;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body {
+  background-color: rgb(36, 93, 218);
+}
+
+.language {
+  text-align: right;
+  transform: translateY(-12px);
+  display: flex;
+  /* muốn xài justify-content hay align-items thì đều phải display flex  */
+  /* flex end là đưa content xuống cuối thẻ luôn */
+  justify-content: flex-end;
+}
+
+.language span {
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.language span:nth-child(1) {
+  background-color: #fcc90b;
+  border-bottom-left-radius: 3px;
+  margin-right: 2px;
+}
+
+.language span:nth-child(2) {
+  background-color: #fcb715;
+  border-bottom-right-radius: 3px;
+}
+
+.link {
+  display: flex;
+}
+
+.link a {
+  font-weight: 700;
+  color: #231f20;
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 10px 0;
+  display: inline-block;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.link > * {
+  margin: 0px 20px;
+}
+
+.link a:last-child {
+  margin-right: 0;
+}
+
+.dropdown-menu {
+  position: relative;
+}
+
+.list-item {
+  /* cho thẻ con nó bám vào thẻ cha là dropdown-menu */
+  position: absolute;
+  background-color: orange;
+  /* để bám sát đít cha 100% */
+  top: 100%;
+  width: 200px;
+  /* giống display: none */
+  visibility: hidden;
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.list-item p {
+  padding: 10px 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.list-item p:nth-child(1) {
+  background-color: #fcb715;
+  border-bottom: 2px solid white;
+}
+
+.list-item p:nth-child(2) {
+  background-color: #e11f2b;
+}
+
+.dropdown-menu:hover .list-item {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.link i {
+  color: #8f7b12;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.dropdown-menu:hover i {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu:hover a {
+  text-decoration: underline;
+}
+
+.menu-icon i {
+  font-size: 30px;
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  header .link {
+    display: none;
+  }
+
+  .language span:nth-child(1) {
+    border-top-left-radius: 3px;
+  }
+
+  .language span:nth-child(2) {
+    border-top-right-radius: 3px;
+  }
+
+  .language {
+    transform: none;
+  }
+
+  .left img {
+    width: 75px;
+  }
+
+  .menu-icon i {
+    display: block;
+  }
+}
