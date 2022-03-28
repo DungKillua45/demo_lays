@@ -130,21 +130,30 @@ body {
 
   .language span:nth-child(1) {
     border-top-left-radius: 3px;
+    padding: 1vh;
   }
 
   .language span:nth-child(2) {
     border-top-right-radius: 3px;
+    padding: 1vh;
   }
 
   .language {
     transform: none;
   }
+  .language span {
+    font-size: 2vh;
+  }
 
   .left img {
-    width: 75px;
+    width: 10.5vh;
+    /* padding: 10px 0; */
+    display: flex;
+    align-items: center;
   }
 
   .menu-icon i {
     display: block;
+    font-size: 3.5vh;
   }
 }
